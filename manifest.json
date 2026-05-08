@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Topics Page - Remove Spam Repos",
+  "version": "1.0.0",
+  "description": "Hide repositories from blocked GitHub usernames on GitHub Topics pages.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GitHub Topics Page - Remove Spam Repos"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/topics/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
